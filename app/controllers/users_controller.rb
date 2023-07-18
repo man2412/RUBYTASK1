@@ -12,8 +12,10 @@ class UsersController < ApplicationController
     if @user.save
       flash[:success] = "Welcome to the Sample App!"
       redirect_to @user
-    # Handle a successful save.
+    
     else
+      flash[:error] = "There were some errors in the form submission."
+      
      render 'new'
     end
   end
